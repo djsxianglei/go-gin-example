@@ -1,0 +1,12 @@
+module githubcom/djsxianglei/go-gin-example
+
+go 1.13
+
+require (
+	github.com/EDDYCJY/go-gin-example v0.0.0-20200505102242-63963976dee0
+	github.com/gin-gonic/gin v1.6.3
+	github.com/go-ini/ini v1.57.0
+	github.com/jinzhu/gorm v0.0.0-20180213101209-6e1387b44c64
+	github.com/unknwon/com v1.0.1
+	gopkg.in/ini.v1 v1.57.0 // indirect
+)
