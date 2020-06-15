@@ -1,7 +1,6 @@
 package models
 
 import (
-	"fmt"
 	"github.com/jinzhu/gorm"
 	"time"
 )
@@ -36,7 +35,6 @@ func GetTagTotal(maps interface{}) (count int) {
 func ExistTagByName(name string) bool {
 	var tag Tag
 	db.Select("id").Where("name = ?", name).First(&tag)
-	fmt.Println(tag)
 	if tag.ID > 0 {
 		return true
 	}

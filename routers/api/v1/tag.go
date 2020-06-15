@@ -1,7 +1,6 @@
 package v1
 
 import (
-	"fmt"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
 	"github.com/unknwon/com"
@@ -76,7 +75,6 @@ func AddTag(c *gin.Context) {
 func EditTag(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 	name := c.Query("name")
-	fmt.Println("name=",name)
 	modifiedBy := c.Query("modified_by")
 
 	valid := validation.Validation{}
