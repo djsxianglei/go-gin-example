@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/astaxie/beego v1.9.3-0.20171218111859-f16688817aa4
 	github.com/denisenkom/go-mssqldb v0.0.0-20190920000552-128d9f4ae1cd // indirect
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5 // indirect
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-ini/ini v1.57.0
