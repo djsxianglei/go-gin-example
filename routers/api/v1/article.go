@@ -6,9 +6,9 @@ import (
 	"github.com/unknwon/com"
 	"githubcom/djsxianglei/go-gin-example/models"
 	"githubcom/djsxianglei/go-gin-example/pkg/e"
+	"githubcom/djsxianglei/go-gin-example/pkg/logging"
 	"githubcom/djsxianglei/go-gin-example/pkg/setting"
 	"githubcom/djsxianglei/go-gin-example/pkg/util"
-	"log"
 	"net/http"
 )
 
@@ -30,7 +30,7 @@ func GetArticle(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Printf("err.key: %s, err.message: %s", err.Key, err.Message)
+			logging.Info(err.Key,err.Message)
 		}
 	}
 
@@ -72,7 +72,7 @@ func GetArticles(c *gin.Context) {
 
 	} else {
 		for _, err := range valid.Errors {
-			log.Printf("err.key: %s, err.message: %s", err.Key, err.Message)
+			logging.Info(err.Key,err.Message)
 		}
 	}
 
@@ -120,7 +120,7 @@ func AddArticle(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Printf("err.key: %s, err.message: %s", err.Key, err.Message)
+			logging.Info(err.Key,err.Message)
 		}
 	}
 	if code == e.INVALID_PARAMS {
@@ -190,7 +190,7 @@ func EditArticle(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Printf("err.key: %s, err.message: %s", err.Key, err.Message)
+			logging.Info(err.Key,err.Message)
 		}
 	}
 	if code == e.INVALID_PARAMS {
@@ -223,7 +223,7 @@ func DeleteArticle(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Printf("err.key: %s, err.message: %s", err.Key, err.Message)
+			logging.Info(err.Key,err.Message)
 		}
 	}
 	if code == e.INVALID_PARAMS {

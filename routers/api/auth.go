@@ -4,7 +4,7 @@ import (
 	"githubcom/djsxianglei/go-gin-example/models"
 	"githubcom/djsxianglei/go-gin-example/pkg/e"
 	util "githubcom/djsxianglei/go-gin-example/pkg/jwt"
-	"log"
+	"githubcom/djsxianglei/go-gin-example/pkg/logging"
 	"net/http"
 
 	"github.com/astaxie/beego/validation"
@@ -43,13 +43,13 @@ func GetAuth(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Println(err.Key, err.Message)
+			logging.Info(err.Key, err.Message)
 		}
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"code" : code,
-		"msg" : e.GetMsg(code),
-		"data" : data,
+		"code": code,
+		"msg":  e.GetMsg(code),
+		"data": data,
 	})
 }
